@@ -1,8 +1,6 @@
 package com.anthem;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,7 +14,7 @@ public class BenefitsController {
 	@Autowired
 	private IBenefitsService ibenefitsService;
 
-	@RequestMapping(value = "/benefits", method = RequestMethod.GET, produces = "application/json")
+	@RequestMapping(value = "/benefits", method = RequestMethod.POST, produces = "application/json")
 	public Benefits getBenefitsbyUserId(
 			@RequestParam(value = "id", required = false, defaultValue = "0") final String id) {
 		Benefits benefits = ibenefitsService.getBenefitsDetails(id);
