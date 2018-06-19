@@ -11,6 +11,7 @@ public class BenefitsService implements IBenefitsService {
 		Benefits benefits = new Benefits();
 	
 		benefits.setAmountPaid("200.00");
+		benefits.setId(Integer.parseInt(id));
 		benefits.setBenefitsStartDate("12/2016");
 		benefits.setDentalPlan(true);
 		benefits.setDependantName("Wife's Name");

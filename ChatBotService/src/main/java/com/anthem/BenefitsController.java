@@ -1,6 +1,7 @@
 package com.anthem;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,7 +17,7 @@ public class BenefitsController {
 
 	@RequestMapping(value = "/benefits", method = RequestMethod.POST, produces = "application/json")
 	public Benefits getBenefitsbyUserId(
-			@RequestParam(value = "id", required = false, defaultValue = "0") final String id) {
+			@RequestHeader(value = "id", required = false, defaultValue = "0") final String id) {
 		Benefits benefits = ibenefitsService.getBenefitsDetails(id);
 		return benefits;
 	}
